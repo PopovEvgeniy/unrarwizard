@@ -1,0 +1,83 @@
+object Form1: TForm1
+  Left = 239
+  Height = 144
+  Top = 250
+  Width = 451
+  Caption = 'Form1'
+  ClientHeight = 144
+  ClientWidth = 451
+  OnCreate = FormCreate
+  LCLVersion = '1.6.4.0'
+  object LabeledEdit1: TLabeledEdit
+    Left = 80
+    Height = 21
+    Top = 24
+    Width = 256
+    EditLabel.AnchorSideLeft.Control = LabeledEdit1
+    EditLabel.AnchorSideRight.Control = LabeledEdit1
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = LabeledEdit1
+    EditLabel.Left = 80
+    EditLabel.Height = 13
+    EditLabel.Top = 8
+    EditLabel.Width = 256
+    EditLabel.Caption = 'Archive'
+    EditLabel.ParentColor = False
+    TabOrder = 0
+    Text = 'LabeledEdit1'
+    OnChange = LabeledEdit1Change
+  end
+  object Button1: TButton
+    Left = 344
+    Height = 25
+    Top = 24
+    Width = 99
+    Caption = 'Open'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 344
+    Height = 25
+    Top = 64
+    Width = 99
+    Caption = 'Browse'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object LabeledEdit2: TLabeledEdit
+    Left = 80
+    Height = 21
+    Top = 64
+    Width = 256
+    EditLabel.AnchorSideLeft.Control = LabeledEdit2
+    EditLabel.AnchorSideRight.Control = LabeledEdit2
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = LabeledEdit2
+    EditLabel.Left = 80
+    EditLabel.Height = 13
+    EditLabel.Top = 48
+    EditLabel.Width = 256
+    EditLabel.Caption = 'Directory'
+    EditLabel.ParentColor = False
+    TabOrder = 3
+    Text = 'LabeledEdit2'
+  end
+  object Button3: TButton
+    Left = 168
+    Height = 25
+    Top = 104
+    Width = 75
+    Caption = 'Extract'
+    OnClick = Button3Click
+    TabOrder = 4
+  end
+  object OpenDialog1: TOpenDialog
+    left = 32
+    top = 24
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    left = 40
+    top = 96
+  end
+end

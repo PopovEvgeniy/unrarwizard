@@ -73,16 +73,14 @@ convert_file_name:=target;
 end;
 
 procedure execute_program(executable:string;argument:string);
-var parametrs:string;
 begin
-parametrs:=UTF8ToSys(argument);
-ExecuteProcess(UTF8ToSys(executable),parametrs,[]);
+ExecuteProcess(UTF8ToWinCP(executable),UTF8ToWinCP(argument),[]);
 end;
 
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.1.2';
+ Form1.Caption:='Unrar wizard 1.1.3';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;

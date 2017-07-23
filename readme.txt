@@ -1,6 +1,6 @@
                                 Unrar wizard
 
-                               Version 1.1.2
+                               Version 1.1.3
 
                          Created by Popov Evgeniy Alekseyevich
 
@@ -20,10 +20,6 @@ Prepare for work
 
 You can download Unrar here: http://www.rarlab.com/rar_add.htm
 Put executable file of Unrar to Unrar wizard directory before first start.
-
-Limitation
-
-Don't use path with non-latin characters. It need for correct work.
 
 Contact
 
@@ -46,3 +42,4 @@ Change log
 1.0.9 - Small changes.
 1.1 - Small bug was fixed.
 1.1.1 - 1.1.2 - Small changes.
+1.1.3 - A bug with non-latin charactes path was fixed.

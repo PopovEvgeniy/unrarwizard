@@ -1,6 +1,6 @@
                                 Unrar wizard
 
-                               Version 1.1.3
+                               Version 1.1.3.0.1
 
                          Created by Popov Evgeniy Alekseyevich
 
@@ -42,4 +42,5 @@ Change log
 1.0.9 - Small changes.
 1.1 - Small bug was fixed.
 1.1.1 - 1.1.2 - Small changes.
-1.1.3 - A bug with non-latin charactes path was fixed.
+1.1.3 - A bug with non-Latin characters path was fixed.
+1.1.3.0.1 – Documentation was updated.

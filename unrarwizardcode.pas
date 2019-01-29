@@ -32,7 +32,6 @@ type
 
   var Form1: TForm1;
   function get_path(): string;
-  function check_input(input:string):Boolean;
   function convert_file_name(source:string): string;
   procedure execute_program(executable:string;argument:string);
   procedure window_setup();
@@ -48,17 +47,6 @@ implementation
 function get_path(): string;
 begin
 get_path:=ExtractFilePath(Application.ExeName);
-end;
-
-function check_input(input:string):Boolean;
-var target:Boolean;
-begin
-target:=True;
-if input='' then
-begin
-target:=False;
-end;
-check_input:=target;
 end;
 
 function convert_file_name(source:string): string;
@@ -80,7 +68,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.1.3.1';
+ Form1.Caption:='Unrar wizard 1.1.4';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -149,7 +137,7 @@ end;
 
 procedure TForm1.LabeledEdit1Change(Sender: TObject);
 begin
-Form1.Button3.Enabled:=check_input(Form1.LabeledEdit1.Text);
+Form1.Button3.Enabled:=Form1.LabeledEdit1.Text<>'';
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);

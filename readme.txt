@@ -1,6 +1,6 @@
                                 Unrar wizard
 
-                               Version 1.1.4
+                               Version 1.1.6
 
                          This software made by Popov Evgeniy Alekseyevich
 
@@ -29,7 +29,7 @@ You can send me a letter to tuzik87@inbox.ru
 About program modification
 
 Source code is included in source.zip archive.
-It can be compiled under Lazarus 1.8.4 or higher.
+It can be compiled under Lazarus 2.0 or higher.
 
 Change log
 
@@ -47,3 +47,5 @@ Change log
 1.1.3.0.1 – Documentation was updated.
 1.1.3.1 - 64 bit system support was added.
 1.1.4 - Small changes.
+1.1.5 - New option was added.
+1.1.6 - Small changes.

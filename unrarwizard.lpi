@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <PathDelim Value="\"/>
     <General>
       <MainUnit Value="0"/>
@@ -50,13 +50,12 @@
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
-      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
-      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
     </PublishOptions>
     <RunParams>
-      <local>
-        <FormatVersion Value="1"/>
-      </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
     </RunParams>
     <RequiredPackages Count="1">
       <Item1>
@@ -76,14 +75,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="70"/>
-        <CursorPos X="51" Y="140"/>
+        <TopLine Value="72"/>
+        <CursorPos X="36" Y="72"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="16" HistoryIndex="15">
+    <JumpHistory Count="17" HistoryIndex="16">
       <Position1>
         <Filename Value="unrarwizardcode.pas"/>
         <Caret Line="114" Column="94" TopLine="114"/>
@@ -148,6 +147,10 @@
         <Filename Value="unrarwizardcode.pas"/>
         <Caret Line="120" Column="48" TopLine="94"/>
       </Position16>
+      <Position17>
+        <Filename Value="unrarwizardcode.pas"/>
+        <Caret Line="140" Column="51" TopLine="70"/>
+      </Position17>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

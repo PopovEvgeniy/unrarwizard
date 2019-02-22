@@ -1,25 +1,19 @@
 object Form1: TForm1
   Left = 239
-  Height = 144
+  Height = 170
   Top = 250
   Width = 451
   Caption = 'Form1'
-  ClientHeight = 144
+  ClientHeight = 170
   ClientWidth = 451
   OnCreate = FormCreate
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.0.0.4'
   object LabeledEdit1: TLabeledEdit
     Left = 80
     Height = 21
     Top = 24
     Width = 256
-    EditLabel.AnchorSideLeft.Control = LabeledEdit1
-    EditLabel.AnchorSideRight.Control = LabeledEdit1
-    EditLabel.AnchorSideRight.Side = asrBottom
-    EditLabel.AnchorSideBottom.Control = LabeledEdit1
-    EditLabel.Left = 80
     EditLabel.Height = 13
-    EditLabel.Top = 8
     EditLabel.Width = 256
     EditLabel.Caption = 'Archive'
     EditLabel.ParentColor = False
@@ -50,13 +44,7 @@ object Form1: TForm1
     Height = 21
     Top = 64
     Width = 256
-    EditLabel.AnchorSideLeft.Control = LabeledEdit2
-    EditLabel.AnchorSideRight.Control = LabeledEdit2
-    EditLabel.AnchorSideRight.Side = asrBottom
-    EditLabel.AnchorSideBottom.Control = LabeledEdit2
-    EditLabel.Left = 80
     EditLabel.Height = 13
-    EditLabel.Top = 48
     EditLabel.Width = 256
     EditLabel.Caption = 'Directory'
     EditLabel.ParentColor = False
@@ -66,18 +54,26 @@ object Form1: TForm1
   object Button3: TButton
     Left = 168
     Height = 25
-    Top = 104
+    Top = 136
     Width = 75
     Caption = 'Extract'
     OnClick = Button3Click
     TabOrder = 4
+  end
+  object CheckBox1: TCheckBox
+    Left = 80
+    Height = 17
+    Top = 104
+    Width = 130
+    Caption = 'Overwrite existing files'
+    TabOrder = 5
   end
   object OpenDialog1: TOpenDialog
     left = 32
     top = 24
   end
   object SelectDirectoryDialog1: TSelectDirectoryDialog
-    left = 40
-    top = 96
+    left = 376
+    top = 104
   end
 end

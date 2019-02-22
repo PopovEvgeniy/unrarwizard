@@ -15,6 +15,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    CheckBox1: TCheckBox;
     LabeledEdit1: TLabeledEdit;
     LabeledEdit2: TLabeledEdit;
     OpenDialog1: TOpenDialog;
@@ -40,7 +41,7 @@ type
   procedure language_setup();
   procedure common_setup();
   procedure setup();
-  procedure extract_data(archive:string;directory:string);
+  procedure extract_data(archive:string;directory:string;overwrite:boolean);
 
 implementation
 
@@ -68,7 +69,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.1.4';
+ Form1.Caption:='Unrar wizard 1.1.6';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -86,20 +87,22 @@ end;
 procedure interface_setup();
 begin
 Form1.Button1.ShowHint:=False;
-Form1.Button2.ShowHint:=Form1.Button1.ShowHint;
+Form1.Button2.ShowHint:=False;
 Form1.Button2.ShowHint:=False;
 Form1.Button3.Enabled:=False;
-Form1.LabeledEdit1.Text:='';
+Form1.CheckBox1.Checked:=True;
 Form1.LabeledEdit1.LabelPosition:=lpLeft;
-Form1.LabeledEdit1.Enabled:=False;
-Form1.LabeledEdit2.Text:='';
 Form1.LabeledEdit2.LabelPosition:=lpLeft;
+Form1.LabeledEdit1.Enabled:=False;
 Form1.LabeledEdit2.Enabled:=False;
+Form1.LabeledEdit1.Text:='';
+Form1.LabeledEdit2.Text:='';
 end;
 
 procedure language_setup();
 begin
 Form1.LabeledEdit1.EditLabel.Caption:='Archive';
+Form1.CheckBox1.Caption:='Overwrite existing files';
 Form1.Button1.Caption:='Open';
 Form1.Button2.Caption:='Browse';
 Form1.Button3.Caption:='Extract';
@@ -120,11 +123,13 @@ common_setup();
 language_setup();
 end;
 
-procedure extract_data(archive:string;directory:string);
+procedure extract_data(archive:string;directory:string;overwrite:boolean);
 var target,work:string;
 begin
 target:=get_path()+'unrar.exe';
-work:='x '+convert_file_name(archive)+' '+convert_file_name(directory);
+work:='x ';
+if overwrite=true then work:=work+'-o+ ';
+work:=work+convert_file_name(archive)+' '+convert_file_name(directory);
 execute_program(target,work);
 end;
 
@@ -157,7 +162,7 @@ end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-extract_data(Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text);
+extract_data(Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text,Form1.CheckBox1.Checked);
 end;
 
 {$R *.lfm}

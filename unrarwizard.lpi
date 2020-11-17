@@ -12,14 +12,14 @@
     <i18n>
       <EnableI18N LFM="False"/>
     </i18n>
-    <BuildModes Count="2" Active="Windows 64 bit">
+    <BuildModes Count="2" Active="Windows 32 bit">
       <Item1 Name="Windows 32 bit" Default="True"/>
       <Item2 Name="Windows 64 bit">
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="64\unrarwizard"/>
+            <Filename Value="unrarwizard64"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -75,14 +75,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="72"/>
-        <CursorPos X="36" Y="72"/>
+        <TopLine Value="146"/>
+        <CursorPos X="2" Y="175"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="17" HistoryIndex="16">
+    <JumpHistory Count="19" HistoryIndex="18">
       <Position1>
         <Filename Value="unrarwizardcode.pas"/>
         <Caret Line="114" Column="94" TopLine="114"/>
@@ -151,13 +151,21 @@
         <Filename Value="unrarwizardcode.pas"/>
         <Caret Line="140" Column="51" TopLine="70"/>
       </Position17>
+      <Position18>
+        <Filename Value="unrarwizardcode.pas"/>
+        <Caret Line="159" Column="70" TopLine="154"/>
+      </Position18>
+      <Position19>
+        <Filename Value="unrarwizardcode.pas"/>
+        <Caret Line="175" Column="116" TopLine="166"/>
+      </Position19>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="32\unrarwizard"/>
+      <Filename Value="unrarwizard"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>

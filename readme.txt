@@ -1,6 +1,6 @@
                                 Unrar wizard
 
-                               Version 1.1.7
+                               Version 1.1.8
 
                          This software made by Popov Evgeniy Alekseyevich
 
@@ -49,3 +49,4 @@ Change log
 1.1.4 - Small changes.
 1.1.5 - New option was added.
 1.1.6 - 1.1.7 - Small changes.
+1.1.8 - Small bug was fixed.

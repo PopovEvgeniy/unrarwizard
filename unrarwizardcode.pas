@@ -5,7 +5,7 @@ unit unrarwizardcode;
 interface
 
 uses
-Classes, SysUtils, FileUtil, Forms, Controls, Dialogs, ExtCtrls, StdCtrls, LazUTF8;
+Classes, SysUtils, FileUtil, Forms, Controls, Dialogs, ExtCtrls, StdCtrls;
 
 type
 
@@ -66,13 +66,18 @@ end;
 
 procedure execute_program(executable:string;argument:string);
 begin
- ExecuteProcess(UTF8ToWinCP(executable),UTF8ToWinCP(argument),[]);
+ try
+  ExecuteProcess(executable,argument,[]);
+ except
+  On EOSError do ShowMessage('Cant run an external program');
+ end;
+
 end;
 
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.1.7';
+ Form1.Caption:='Unrar wizard 1.1.8';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;

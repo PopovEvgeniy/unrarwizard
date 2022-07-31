@@ -34,17 +34,7 @@ type
     { public declarations }
   end; 
 
-  var Form1: TForm1;
-  function get_path(): string;
-  function convert_file_name(source:string): string;
-  procedure execute_program(executable:string;argument:string);
-  procedure window_setup();
-  procedure dialog_setup();
-  procedure interface_setup();
-  procedure language_setup();
-  procedure common_setup();
-  procedure setup();
-  procedure extract_data(archive:string;directory:string;overwrite:boolean);
+var Form1: TForm1;
 
 implementation
 
@@ -69,7 +59,7 @@ begin
  try
   ExecuteProcess(executable,argument,[]);
  except
-  On EOSError do ShowMessage('Cant run an external program');
+  ShowMessage('Cant run an external program');
  end;
 
 end;
@@ -77,7 +67,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.1.8';
+ Form1.Caption:='Unrar wizard 1.1.9';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;

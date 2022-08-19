@@ -67,7 +67,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.1.9';
+ Form1.Caption:='Unrar wizard 1.2';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -108,16 +108,11 @@ begin
  Form1.SelectDirectoryDialog1.Title:='Please select output directory';
 end;
 
-procedure common_setup();
+procedure setup();
 begin
  window_setup();
  dialog_setup();
  interface_setup();
-end;
-
-procedure setup();
-begin
- common_setup();
  language_setup();
 end;
 

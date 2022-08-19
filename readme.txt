@@ -1,6 +1,6 @@
                                 Unrar wizard
 
-                               Version 1.1.9.1
+                               Version 1.2
 
                          This software made by Popov Evgeniy Alekseyevich
 
@@ -20,7 +20,7 @@ This program distributed under GNU GENERAL PUBLIC LICENSE.
 Prepare for work
 
 You can download Unrar here: http://www.rarlab.com/rar_add.htm
-Put executable file of Unrar to Unrar wizard directory before first start.
+Put the executable file of Unrar to Unrar wizard directory before first start.
 
 Contact
 
@@ -52,3 +52,4 @@ Change log
 1.1.8 - Small bug fixed.
 1.1.9 - Small changes.
 1.1.9.1 – Documentation updated.
+1.2 - Small changes.

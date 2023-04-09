@@ -5,7 +5,7 @@ unit unrarwizardcode;
 interface
 
 uses
-Classes, SysUtils, FileUtil, Forms, Controls, Dialogs, ExtCtrls, StdCtrls;
+Classes, SysUtils, Forms, Controls, Dialogs, ExtCtrls, StdCtrls, LazFileUtils;
 
 type
 
@@ -38,12 +38,7 @@ var Form1: TForm1;
 
 implementation
 
-function get_path(): string;
-begin
- get_path:=ExtractFilePath(Application.ExeName);
-end;
-
-function convert_file_name(source:string): string;
+function convert_file_name(const source:string): string;
 var target:string;
 begin
  target:=source;
@@ -54,7 +49,7 @@ begin
  convert_file_name:=target;
 end;
 
-procedure execute_program(executable:string;argument:string);
+procedure execute_program(const executable:string;const argument:string);
 begin
  try
   ExecuteProcess(executable,argument,[]);
@@ -64,10 +59,20 @@ begin
 
 end;
 
+procedure extract_data(const archive:string;const directory:string;const overwrite:boolean);
+var target,work:string;
+begin
+ target:=ExtractFilePath(Application.ExeName)+'unrar.exe';
+ work:='x ';
+ if overwrite=true then work:=work+'-o+ ';
+ work:=work+convert_file_name(archive)+' '+convert_file_name(directory);
+ execute_program(target,work);
+end;
+
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.2';
+ Form1.Caption:='Unrar wizard 1.2.1';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -114,16 +119,6 @@ begin
  dialog_setup();
  interface_setup();
  language_setup();
-end;
-
-procedure extract_data(archive:string;directory:string;overwrite:boolean);
-var target,work:string;
-begin
- target:=get_path()+'unrar.exe';
- work:='x ';
- if overwrite=true then work:=work+'-o+ ';
- work:=work+convert_file_name(archive)+' '+convert_file_name(directory);
- execute_program(target,work);
 end;
 
 { TForm1 }

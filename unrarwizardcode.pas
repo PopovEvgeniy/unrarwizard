@@ -25,9 +25,6 @@ type
     procedure Button3Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure LabeledEdit1Change(Sender: TObject);
-    procedure OpenDialog1CanClose(Sender: TObject; var CanClose: boolean);
-    procedure SelectDirectoryDialog1CanClose(Sender: TObject;
-      var CanClose: boolean);
   private
     { private declarations }
   public
@@ -72,7 +69,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.2.1';
+ Form1.Caption:='Unrar wizard 1.2.2';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -133,26 +130,23 @@ begin
  Form1.Button3.Enabled:=Form1.LabeledEdit1.Text<>'';
 end;
 
-procedure TForm1.OpenDialog1CanClose(Sender: TObject; var CanClose: boolean);
-begin
- Form1.LabeledEdit1.Text:=Form1.OpenDialog1.FileName;
- Form1.LabeledEdit2.Text:=ExtractFilePath(Form1.OpenDialog1.FileName);
-end;
-
-procedure TForm1.SelectDirectoryDialog1CanClose(Sender: TObject;
-  var CanClose: boolean);
-begin
- Form1.LabeledEdit2.Text:=Form1.SelectDirectoryDialog1.FileName;
-end;
-
 procedure TForm1.Button1Click(Sender: TObject);
 begin
- Form1.OpenDialog1.Execute();
+ if Form1.OpenDialog1.Execute()=True then
+ begin
+  Form1.LabeledEdit1.Text:=Form1.OpenDialog1.FileName;
+  Form1.LabeledEdit2.Text:=ExtractFilePath(Form1.OpenDialog1.FileName);
+ end;
+
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
- Form1.SelectDirectoryDialog1.Execute();
+ if Form1.SelectDirectoryDialog1.Execute()=True then
+ begin
+  Form1.LabeledEdit2.Text:=Form1.SelectDirectoryDialog1.FileName;
+ end;
+
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);

@@ -69,7 +69,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.2.2';
+ Form1.Caption:='Unrar wizard 1.2.3';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -77,6 +77,7 @@ end;
 
 procedure dialog_setup();
 begin
+ Form1.SelectDirectoryDialog1.Options:=[ofOldStyleDialog,ofEnableSizing,ofViewDetail,ofCreatePrompt];
  Form1.SelectDirectoryDialog1.InitialDir:='';
  Form1.OpenDialog1.InitialDir:='';
  Form1.OpenDialog1.FileName:='*.rar';

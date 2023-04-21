@@ -1,6 +1,6 @@
                                 Unrar wizard
 
-                               Version 1.2.3
+                               Version 1.2.4
 
                          This software made by Popov Evgeniy Alekseyevich
 
@@ -54,4 +54,4 @@ Change log
 1.1.9.1 – Documentation updated.
 1.2 - 1.2.1 - Small changes.
 1.2.2 - Small bug fixed.
-1.2.3 - Small changes.
+1.2.3 - 1.2.4 - Small changes.

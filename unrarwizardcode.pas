@@ -46,6 +46,17 @@ begin
  convert_file_name:=target;
 end;
 
+function correct_path(const source:string ): string;
+var target:string;
+begin
+ target:=source;
+ if LastDelimiter(DirectorySeparator,source)<>Length(source) then
+ begin
+  target:=source+DirectorySeparator;
+ end;
+ correct_path:=target;
+end;
+
 procedure execute_program(const executable:string;const argument:string);
 begin
  try
@@ -61,15 +72,14 @@ var target,work:string;
 begin
  target:=ExtractFilePath(Application.ExeName)+'unrar.exe';
  work:='x ';
- if overwrite=true then work:=work+'-o+ ';
- work:=work+convert_file_name(archive)+' '+convert_file_name(directory);
- execute_program(target,work);
+ if overwrite=true then work:='x -o+ ';
+ execute_program(target,work+convert_file_name(archive)+' '+convert_file_name(directory));
 end;
 
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.2.3';
+ Form1.Caption:='Unrar wizard 1.2.4';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -77,7 +87,6 @@ end;
 
 procedure dialog_setup();
 begin
- Form1.SelectDirectoryDialog1.Options:=[ofOldStyleDialog,ofEnableSizing,ofViewDetail,ofCreatePrompt];
  Form1.SelectDirectoryDialog1.InitialDir:='';
  Form1.OpenDialog1.InitialDir:='';
  Form1.OpenDialog1.FileName:='*.rar';
@@ -145,7 +154,7 @@ procedure TForm1.Button2Click(Sender: TObject);
 begin
  if Form1.SelectDirectoryDialog1.Execute()=True then
  begin
-  Form1.LabeledEdit2.Text:=Form1.SelectDirectoryDialog1.FileName;
+  Form1.LabeledEdit2.Text:=correct_path(Form1.SelectDirectoryDialog1.FileName);
  end;
 
 end;

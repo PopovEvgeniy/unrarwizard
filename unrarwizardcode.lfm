@@ -7,7 +7,7 @@ object Form1: TForm1
   ClientHeight = 170
   ClientWidth = 451
   OnCreate = FormCreate
-  LCLVersion = '2.2.6.0'
+  LCLVersion = '3.6.0.0'
   object LabeledEdit1: TLabeledEdit
     Left = 80
     Height = 23
@@ -27,8 +27,8 @@ object Form1: TForm1
     Top = 24
     Width = 99
     Caption = 'Open'
-    OnClick = Button1Click
     TabOrder = 1
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 344
@@ -36,8 +36,8 @@ object Form1: TForm1
     Top = 64
     Width = 99
     Caption = 'Browse'
-    OnClick = Button2Click
     TabOrder = 2
+    OnClick = Button2Click
   end
   object LabeledEdit2: TLabeledEdit
     Left = 80
@@ -57,15 +57,15 @@ object Form1: TForm1
     Top = 136
     Width = 75
     Caption = 'Extract'
-    OnClick = Button3Click
     TabOrder = 4
+    OnClick = Button3Click
   end
   object CheckBox1: TCheckBox
     Left = 80
     Height = 19
     Top = 104
-    Width = 139
-    Caption = 'Overwrite existing files'
+    Width = 157
+    Caption = 'Overwrite the existing files'
     TabOrder = 5
   end
   object OpenDialog1: TOpenDialog

@@ -79,7 +79,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.2.4';
+ Form1.Caption:='Unrar wizard 1.2.5';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -112,12 +112,12 @@ end;
 procedure language_setup();
 begin
  Form1.LabeledEdit1.EditLabel.Caption:='Archive';
- Form1.CheckBox1.Caption:='Overwrite existing files';
+ Form1.CheckBox1.Caption:='Overwrite the existing files';
  Form1.Button1.Caption:='Open';
  Form1.Button2.Caption:='Browse';
  Form1.Button3.Caption:='Extract';
- Form1.OpenDialog1.Title:='Open existing archive';
- Form1.SelectDirectoryDialog1.Title:='Please select output directory';
+ Form1.OpenDialog1.Title:='Open the existing archive';
+ Form1.SelectDirectoryDialog1.Title:='Please select the output directory';
 end;
 
 procedure setup();

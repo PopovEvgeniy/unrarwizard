@@ -1,6 +1,6 @@
                                 Unrar wizard
 
-                               Version 1.2.5.1
+                               Version 1.2.5.2
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -35,26 +35,26 @@ Change log
 
 1.0: Initial version.
 1.0.1-1.0.3: The small changes in the source code.
-1.0.4: A small bug is fixed.
+1.0.4: A small bug has been fixed.
 1.0.5: The program was totally rewritten.
-1.0.6: Russian localization is removed.
-1.0.7: The user interface improved.
-1.0.8: A small bug is fixed.
+1.0.6: Russian localization has been removed.
+1.0.7: The user interface has improved.
+1.0.8: A small bug has been fixed.
 1.0.9: The small changes.
-1.1: A small bug is fixed.
+1.1: A small bug has been fixed.
 1.1.1-1.1.2: The small changes.
-1.1.3: A bug with non-Latin characters in the path is fixed.
-1.1.3.0.1: Documentation updated.
+1.1.3: A bug with non-Latin characters in the path has been fixed.
+1.1.3.0.1: The documentation has been updated.
 1.1.3.1: 64-bit system support has been added.
 1.1.4: The small changes.
 1.1.5: A new option has been added.
 1.1.6-1.1.7: The small changes.
-1.1.8: A small bug is fixed.
+1.1.8: A small bug has been fixed.
 1.1.9: The small changes.
-1.1.9.1: Documentation updated.
+1.1.9.1: The documentation has been updated.
 1.2-1.2.1: The small changes.
-1.2.2: A small bug is fixed.
+1.2.2: A small bug has been fixed.
 1.2.3-1.2.4: The small changes.
-1.2.4.1: Documentation updated.
+1.2.4.1: The documentation has been updated.
 1.2.5: The small changes.
-1.2.5.1: Documentation updated.
+1.2.5.1-1.2.5.2: The documentation has been updated.

@@ -5,33 +5,33 @@ unit unrarwizardcode;
 interface
 
 uses
-Classes, SysUtils, Forms, Controls, Dialogs, ExtCtrls, StdCtrls, LazFileUtils;
+Classes, SysUtils, Forms, Controls, Dialogs, ExtCtrls, StdCtrls;
 
 type
 
-  { TForm1 }
+  { TMainWindow }
 
-  TForm1 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    CheckBox1: TCheckBox;
-    LabeledEdit1: TLabeledEdit;
-    LabeledEdit2: TLabeledEdit;
-    OpenDialog1: TOpenDialog;
-    SelectDirectoryDialog1: TSelectDirectoryDialog;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
+  TMainWindow = class(TForm)
+    OpenButton: TButton;
+    BrowseButton: TButton;
+    ExtractButton: TButton;
+    OverwriteCheckBox: TCheckBox;
+    ArchiveField: TLabeledEdit;
+    DirectoryField: TLabeledEdit;
+    OpenDialog: TOpenDialog;
+    SelectDirectoryDialog: TSelectDirectoryDialog;
+    procedure OpenButtonClick(Sender: TObject);
+    procedure BrowseButtonClick(Sender: TObject);
+    procedure ExtractButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure LabeledEdit1Change(Sender: TObject);
+    procedure ArchiveFieldChange(Sender: TObject);
   private
     { private declarations }
   public
     { public declarations }
   end; 
 
-var Form1: TForm1;
+var MainWindow: TMainWindow;
 
 implementation
 
@@ -79,45 +79,45 @@ end;
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- Form1.Caption:='Unrar wizard 1.2.6';
- Form1.BorderStyle:=bsDialog;
- Form1.Font.Name:=Screen.MenuFont.Name;
- Form1.Font.Size:=14;
+ MainWindow.Caption:='Unrar wizard 1.2.8';
+ MainWindow.BorderStyle:=bsDialog;
+ MainWindow.Font.Name:=Screen.MenuFont.Name;
+ MainWindow.Font.Size:=14;
 end;
 
 procedure dialog_setup();
 begin
- Form1.SelectDirectoryDialog1.InitialDir:='';
- Form1.OpenDialog1.InitialDir:='';
- Form1.OpenDialog1.FileName:='*.rar';
- Form1.OpenDialog1.DefaultExt:='*.rar';
- Form1.OpenDialog1.Filter:='Rar archive|*.rar';
+ MainWindow.SelectDirectoryDialog.InitialDir:='';
+ MainWindow.OpenDialog.InitialDir:='';
+ MainWindow.OpenDialog.FileName:='*.rar';
+ MainWindow.OpenDialog.DefaultExt:='*.rar';
+ MainWindow.OpenDialog.Filter:='Rar archive|*.rar';
 end;
 
 procedure interface_setup();
 begin
- Form1.Button1.ShowHint:=False;
- Form1.Button2.ShowHint:=False;
- Form1.Button2.ShowHint:=False;
- Form1.Button3.Enabled:=False;
- Form1.CheckBox1.Checked:=True;
- Form1.LabeledEdit1.LabelPosition:=lpLeft;
- Form1.LabeledEdit2.LabelPosition:=lpLeft;
- Form1.LabeledEdit1.Enabled:=False;
- Form1.LabeledEdit2.Enabled:=False;
- Form1.LabeledEdit1.Text:='';
- Form1.LabeledEdit2.Text:='';
+ MainWindow.OpenButton.ShowHint:=False;
+ MainWindow.BrowseButton.ShowHint:=False;
+ MainWindow.BrowseButton.ShowHint:=False;
+ MainWindow.ExtractButton.Enabled:=False;
+ MainWindow.OverwriteCheckBox.Checked:=True;
+ MainWindow.ArchiveField.LabelPosition:=lpLeft;
+ MainWindow.DirectoryField.LabelPosition:=lpLeft;
+ MainWindow.ArchiveField.Enabled:=False;
+ MainWindow.DirectoryField.Enabled:=False;
+ MainWindow.ArchiveField.Text:='';
+ MainWindow.DirectoryField.Text:='';
 end;
 
 procedure language_setup();
 begin
- Form1.LabeledEdit1.EditLabel.Caption:='Archive';
- Form1.CheckBox1.Caption:='Overwrite the existing files';
- Form1.Button1.Caption:='Open';
- Form1.Button2.Caption:='Browse';
- Form1.Button3.Caption:='Extract';
- Form1.OpenDialog1.Title:='Open the existing archive';
- Form1.SelectDirectoryDialog1.Title:='Please select the output directory';
+ MainWindow.ArchiveField.EditLabel.Caption:='Archive';
+ MainWindow.OverwriteCheckBox.Caption:='Overwrite the existing files';
+ MainWindow.OpenButton.Caption:='Open';
+ MainWindow.BrowseButton.Caption:='Browse';
+ MainWindow.ExtractButton.Caption:='Extract';
+ MainWindow.OpenDialog.Title:='Open the existing archive';
+ MainWindow.SelectDirectoryDialog.Title:='Please select the output directory';
 end;
 
 procedure setup();
@@ -128,40 +128,40 @@ begin
  language_setup();
 end;
 
-{ TForm1 }
+{ TMainWindow }
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TMainWindow.FormCreate(Sender: TObject);
 begin
  setup();
 end;
 
-procedure TForm1.LabeledEdit1Change(Sender: TObject);
+procedure TMainWindow.ArchiveFieldChange(Sender: TObject);
 begin
- Form1.Button3.Enabled:=Form1.LabeledEdit1.Text<>'';
+ MainWindow.ExtractButton.Enabled:=MainWindow.ArchiveField.Text<>'';
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TMainWindow.OpenButtonClick(Sender: TObject);
 begin
- if Form1.OpenDialog1.Execute()=True then
+ if MainWindow.OpenDialog.Execute()=True then
  begin
-  Form1.LabeledEdit1.Text:=Form1.OpenDialog1.FileName;
-  Form1.LabeledEdit2.Text:=ExtractFilePath(Form1.OpenDialog1.FileName);
+  MainWindow.ArchiveField.Text:=MainWindow.OpenDialog.FileName;
+  MainWindow.DirectoryField.Text:=ExtractFilePath(MainWindow.OpenDialog.FileName);
  end;
 
 end;
 
-procedure TForm1.Button2Click(Sender: TObject);
+procedure TMainWindow.BrowseButtonClick(Sender: TObject);
 begin
- if Form1.SelectDirectoryDialog1.Execute()=True then
+ if MainWindow.SelectDirectoryDialog.Execute()=True then
  begin
-  Form1.LabeledEdit2.Text:=correct_path(Form1.SelectDirectoryDialog1.FileName);
+  MainWindow.DirectoryField.Text:=correct_path(MainWindow.SelectDirectoryDialog.FileName);
  end;
 
 end;
 
-procedure TForm1.Button3Click(Sender: TObject);
+procedure TMainWindow.ExtractButtonClick(Sender: TObject);
 begin
- extract_data(Form1.LabeledEdit1.Text,Form1.LabeledEdit2.Text,Form1.CheckBox1.Checked);
+ extract_data(MainWindow.ArchiveField.Text,MainWindow.DirectoryField.Text,MainWindow.OverwriteCheckBox.Checked);
 end;
 
 {$R *.lfm}

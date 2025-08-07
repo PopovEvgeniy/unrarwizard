@@ -1,6 +1,6 @@
                                 Unrar wizard
 
-                               Version 1.2.8
+                               Version 1.2.8.1
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -15,16 +15,12 @@ This program is a graphic shell for Unrar.
 
 License
 
-This program is distributed under GNU GENERAL PUBLIC LICENSE.
+This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
 Prepare
 
 You can download Unrar here: http://www.rarlab.com/rar_add.htm
 Put the executable file of Unrar in the Unrar wizard directory before the first start.
-
-Contact
-
-You can send me a letter at tuzik87@inbox.ru.
 
 About program modification
 
@@ -61,3 +57,4 @@ Change log
 1.2.6: The source code was recompiled under Lazarus 4.0 RC1.
 1.2.7: The source code was recompiled under Lazarus 4.0 RC3.
 1.2.8: The small changes.
+1.2.8.1: The documentation has been updated.

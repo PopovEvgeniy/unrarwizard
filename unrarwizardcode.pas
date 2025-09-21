@@ -79,7 +79,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='Unrar wizard';
- MainWindow.Caption:='Unrar wizard 1.2.8';
+ MainWindow.Caption:='Unrar wizard 1.2.9';
  MainWindow.BorderStyle:=bsDialog;
  MainWindow.Font.Name:=Screen.MenuFont.Name;
  MainWindow.Font.Size:=14;
